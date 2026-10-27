@@ -1,12 +1,5 @@
-import os
-
-from dotenv import load_dotenv
-
-load_dotenv()  # reads variables from .env and sets them in os.environ
-
-
 def greet(name: str) -> str:
-    return f"{os.getenv('GREETING', 'Hello')}, {name}!"
+    return f"Hello, {name}!"
 
 
 def main() -> None:

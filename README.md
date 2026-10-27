@@ -1,6 +1,6 @@
 # Python project template
 
-A [Copier](https://copier.readthedocs.io) template for small Python projects to try things out, with uv, python-dotenv, ruff, ty, prek, pytest and IPython. No Docker: everything runs locally with `uv run`.
+A [Copier](https://copier.readthedocs.io) template for small Python projects to try things out, with uv, ruff, ty, prek, pytest and IPython. No Docker: everything runs locally with `uv run`.
 
 Only the `template/` folder is copied into new projects. This README and `copier.yml` stay here.
 
@@ -42,9 +42,8 @@ uv run pytest
 | File | Purpose |
 |---|---|
 | `pyproject.toml` | Project metadata, ruff and pytest settings |
-| `main.py` | Starting point; reads `.env` with python-dotenv |
+| `main.py` | Starting point |
 | `tests/test_main.py` | Example test |
-| `.env` / `.env.example` | Real local values (never committed) / the list of variables to set (committed) |
 | `prek.toml` | Checks that run on every commit |
 | `.vscode/tasks.json` | Common commands via `Cmd + Shift + P` → Tasks: Run Task |
 | `.copier-answers.yml` | Your answers, used by `copier update` |
