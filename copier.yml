@@ -1,0 +1,26 @@
+# Only files inside template/ are copied into new projects.
+_subdirectory: template
+
+project_name:
+  type: str
+  help: Project name (lowercase, underscores, e.g. my_project)
+  validator: "{% if not project_name %}Project name is required{% endif %}"
+
+description:
+  type: str
+  help: Description
+  validator: "{% if not description %}Description is required{% endif %}"
+
+python_version:
+  type: str
+  help: Python version
+  default: "3.14"
+
+# Run inside the new project after its files are created.
+_tasks:
+  - git init
+  - uv add python-dotenv
+  - uv add --dev ruff ty pytest ipython
+  - prek install
+  - uv run ruff check . --fix
+  - uv run ruff format .

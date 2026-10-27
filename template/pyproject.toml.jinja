@@ -1,0 +1,27 @@
+[project]
+name = "{{ project_name }}"
+version = "0.1.0"
+description = "{{ description }}"
+requires-python = ">={{ python_version }}"
+dependencies = []
+
+[tool.ruff.lint]
+select = [
+    "E",     # pycodestyle errors
+    "W",     # pycodestyle warnings
+    "F",     # Pyflakes
+    "UP",    # pyupgrade
+    "B",     # flake8-bugbear
+    "SIM",   # flake8-simplify
+    "I",     # isort
+    "A",     # flake8-builtins
+    "RUF",   # Ruff-specific rules
+    "PL",    # Pylint
+]
+ignore = []
+fixable = ["ALL"]
+unfixable = []
+
+[tool.pytest]
+pythonpath = ["."]
+testpaths = ["tests"]
